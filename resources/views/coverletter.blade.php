@@ -13,8 +13,8 @@
 </head>
 
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center h1">Cover Letter Generator!</h1>
+    <div class="container mt-5 pb-4">
+        <h1 class="text-center h1 mb-5">Cover Letter Generator!</h1>
 
         <!-- Display Validation Errors -->
         @if ($errors->any())
@@ -32,7 +32,7 @@
             hx-post="{{ route('coverletters.submit') }}"
             hx-target="#coverletter"
             hx-swap="innerHTML"
-            class="p-4 border rounded shadow"
+            class="p-4 border rounded shadow mb-5"
         >
             @csrf <!-- Laravel CSRF Protection -->
 
@@ -93,5 +93,11 @@
 
         <div id="coverletter" class="mt-5 p-4 border rounded shadow hidden"></div>
     </div>
+        <a href="https://buymeacoffee.com/nettis">
+            <footer class="bg-gray-800 text-white text-center py-4">
+                Buy me a coffee! ❤️
+            </footer>
+        </a>
+
 </body>
 </html>
