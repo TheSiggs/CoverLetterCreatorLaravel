@@ -31,7 +31,7 @@ class CoverLetterController extends Controller
             'resume' => $resume,
         ];
 
-        $response = Http::asForm()->post('http://170.64.217.129/submit', $data);
+        $response = Http::asForm()->timeout(600)->post('http://170.64.217.129/submit', $data);
         Log::info($response->status());
         Log::info($response->body());
         $coverletter = $response->body();
