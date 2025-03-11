@@ -1,14 +1,15 @@
-# Use official PHP 8.3 FPM Alpine image
+# Use the official PHP 8.3 FPM Alpine image
 FROM php:8.3-fpm-alpine
 
 # Set working directory
 WORKDIR /var/www/html
 
 # Install system dependencies
-RUN apk add --no-cache bash git curl zip unzip \
-    mariadb-client redis sqlite nginx \
+RUN apk add --no-cache \
+    bash git curl zip unzip \
+    mariadb-client redis sqlite \
     libpng-dev libjpeg-turbo-dev freetype-dev libzip-dev \
-    postgresql-dev nodejs yarn
+    postgresql-dev nodejs yarn nginx supervisor
 
 # Install PHP extensions
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
