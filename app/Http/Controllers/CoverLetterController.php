@@ -31,7 +31,7 @@ class CoverLetterController extends Controller
             'resume' => $resume,
         ];
 
-        $response = Http::asForm()->timeout(600)->post(config('app.url') . '/submit', $data);
+        $response = Http::asForm()->timeout(600)->post(config('app.api_url') . '/submit', $data);
         Log::info($response->status());
         Log::info($response->body());
         $coverletter = $response->body();
