@@ -25,15 +25,17 @@
           redis
           tokenizer
           zip
+          zlib
         ]);
 
-      in {
+      in
+      {
         devShells.default = pkgs.mkShell {
           name = "Laravel Dev Shell";
           buildInputs = [
             php
-            pkgs.phpExtensions.mbstring  # Explicitly include mbstring
-            pkgs.phpExtensions.iconv     # Explicitly include iconv
+            pkgs.phpExtensions.mbstring # Explicitly include mbstring
+            pkgs.phpExtensions.iconv # Explicitly include iconv
             pkgs.phpPackages.composer
             pkgs.phpExtensions.xdebug
             pkgs.nodejs_20
@@ -42,6 +44,7 @@
             pkgs.redis
             pkgs.nginx
             pkgs.sqlite
+            pkgs.flyctl
           ];
 
           shellHook = ''
