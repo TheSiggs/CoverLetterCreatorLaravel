@@ -1,5 +1,5 @@
 @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-    @vite([secure_asset('resources/js/copytoclipboard.js')])
+    @vite(['resources/js/copytoclipboard.js'])
 @endif
 <div class="container">
     <div class="row">

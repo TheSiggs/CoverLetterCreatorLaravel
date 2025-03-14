@@ -6,7 +6,7 @@
     <title>Cover Letter Generator!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-        @vite([secure_asset('resources/css/app.css'), secure_asset('resources/js/app.js')])
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
     @endif
     <script src="https://unpkg.com/htmx.org@1.9.6"></script> <!-- Include HTMX -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
